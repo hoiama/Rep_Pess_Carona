@@ -45,8 +45,8 @@ app.controller('listController', function($scope){
 /**
  * Controller que edita elementos da lista de frutas
  * @param {scopo} $scope - Escopo que pode ser usada no controller criado
- * @param {} $location - Redireciona as rotas
- * @param {tipo} $routeParams - Obtem parametros repassados pela URI  
+ * @param {location} $location - Redireciona as rotas
+ * @param {routeParams} $routeParams - Obtem parametros repassados pela URI  
  */
 app.controller('editController', function($scope, $location, $routeParams){
     $scope.title = "editar fruta";
