@@ -15,6 +15,7 @@ app.config([
             .when('/new', {controller:'newController', templateUrl:'editTemplate.html'})
             .when('/teste', {controller:'simpleControllerOne', templateUrl:'testeTemplate.html'})
             .when('/edit:name', {controller:'editController', templateUrl:'editTemplate.html'})
+            .when('/http', {controller:'httpController', templateUrl:'httpTemplate.html'})
             .otherwise({redirectTo:'/teste'});
     }
 ]);
@@ -80,7 +81,28 @@ app.controller('simpleControllerOne', function ($scope) {
     $scope.user = {name:"Daniel"}
     $scope.frutas = ['banana', 'maça', 'goiaba'];
     $scope.counter = 0;
+
     $scope.addOne = function(){
         $scope.counter++;
     };
 });
+
+
+app.controller('httpController', function($scope, $http){
+    $scope.fruits = Array();
+    $scope.getData = function(){
+        $http.get('listFruitJson.html')
+            .then(
+                function(respose){
+                    $scope.fruits = respose.data.fruits;
+                    console.log('respose.data', respose.data); 
+                    console.log('respose', respose);
+                    console.log('respose.data.fruits', respose.data.fruits);
+                },
+                function(erro){
+                    alert('Erro..."');
+                    console.log(erro);  
+                }
+            )      
+    }
+})
