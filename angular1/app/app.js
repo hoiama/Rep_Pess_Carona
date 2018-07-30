@@ -2,7 +2,7 @@
 /**
  * Declaração de módulo 'app' usando modulo ngRoute para criacao de rotas
  */
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app', ['ngRoute', 'ngResource']);
 
 
 /**
@@ -16,6 +16,7 @@ app.config([
             .when('/teste', {controller:'simpleControllerOne', templateUrl:'testeTemplate.html'})
             .when('/edit:name', {controller:'editController', templateUrl:'editTemplate.html'})
             .when('/http', {controller:'httpController', templateUrl:'httpTemplate.html'})
+            .when('/resource',{controller:'resourceController', templateUrl:'resourceTemplate'})
             .otherwise({redirectTo:'/teste'});
     }
 ]);
@@ -104,5 +105,14 @@ app.controller('httpController', function($scope, $http){
                     console.log(erro);  
                 }
             )      
+    }
+})
+
+app.controller('resourceController', function($scope, Sresource){
+    var Fruits = $resource("listFruitJson.html");
+    $scope.getFruits = function(){
+        Fruits.query(function(data){
+            console.log(data);
+        })
     }
 })
