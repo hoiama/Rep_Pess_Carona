@@ -12,26 +12,30 @@ app.config([
     '$routeProvider', function($routeProvider){
         $routeProvider
             .when('/', {
+                controller:'defaultController',
+                templateUrl:'templates/defaultTemplate.html'
+            })
+            .when('/ng-model', {
                 controller:'listController',
-                templateUrl:'listTemplate.html'
+                templateUrl:'templates/listTemplate.html'
             })
             .when('/new', {
                 controller:'newController',
-                templateUrl:'editTemplate.html'
+                templateUrl:'templates/editTemplate.html'
             })
             .when('/edit:name', {
                 controller:'editController',
-                templateUrl:'editTemplate.html'
+                templateUrl:'templates/editTemplate.html'
             })
             .when('/http', {
                 controller:'httpController',
-                templateUrl:'httpTemplate.html'
+                templateUrl:'templates/httpTemplate.html'
             })
             .when('/resource',{
                 controller:'resourceController',
-                templateUrl:'resourceTemplate'
+                templateUrl:'templates/resourceTemplate'
             })
-            .otherwise({redirectTo:'/teste'});
+            .otherwise({redirectTo:'/'});
     }
 ]);
 
@@ -56,7 +60,7 @@ app.run([
 app.controller('listController', function($scope){
     console.log('listaController');
     $scope.user = {name:""}
-    $scope.listfruits = ['banana', 'maça', 'goiaba'];
+    $scope.listCaronas = ['Porto Alegre', 'Sao leopoldo', 'novo hamburgo'];
     $scope.counter = 0;
 
     $scope.addOne = function(){
@@ -111,15 +115,16 @@ app.controller('simpleControllerOne', function ($scope) {
 
 
 app.controller('httpController', function($scope, $http){
-    $scope.fruits = Array();
+    $scope.listCaronas = Array();
     $scope.getData = function(){
-        $http.get('listFruitJson.html')
+        $http
+            .get('/getCarona')
             .then(
                 function(respose){
-                    $scope.fruits = respose.data.fruits;
+                    $scope.listCaronas = respose.data;
                     console.log('respose.data', respose.data); 
                     console.log('respose', respose);
-                    console.log('respose.data.fruits', respose.data.fruits);
+                    console.log('respose.data', respose.data.fruits);
                 },
                 function(erro){
                     alert('Erro..."');

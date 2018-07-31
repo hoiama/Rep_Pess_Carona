@@ -10,6 +10,6 @@ public class ControllerIndex {
     @RequestMapping(value="/", method= RequestMethod.GET)
     public String getIndex(){
 
-        return "index.html";
+        return "templates/index.html";
     }
 }

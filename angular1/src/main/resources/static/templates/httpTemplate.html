@@ -1,0 +1,21 @@
+<br/>
+<h4>Listagem de caronas</h4>
+
+<table class="table">
+    <thead class="thead-light">
+    <tr>
+        <th>
+            ({{listCaronas.length}}) Caronas Encontrada
+            <button class="btn btn-dark" ng-click="getData()">Descobrir</button>
+        </th>
+    </tr>
+    </thead>
+
+    <tbody ng-repeat="carona in listCaronas">
+    <tr>
+        <td>
+            <a> {{carona.noneCondutor}} - {{carona.destinoCondutor}}</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
