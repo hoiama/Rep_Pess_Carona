@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c182fb09-3598-45f1-9df7-dd7b7c503ed8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/hoiama/angular1/controller/ControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/hoiama/angular1/controller/ControllerIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/app/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app/editTemplate.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/editTemplate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app/httpTemplate.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/httpTemplate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app/listFruitJson.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/listFruitJson.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app/listTemplate.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/listTemplate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app/resourceTemplate.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/resourceTemplate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app/table.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app/testeTemplate.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/testeTemplate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/hoiama/angular1/Angular1ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/hoiama/angular1/main/Angular1ApplicationTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -113,17 +96,19 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="2" />
-          <entry key="html" value="527" />
+          <entry key="html" value="543" />
           <entry key="java" value="201" />
           <entry key="js" value="77" />
+          <entry key="txt" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="2" />
-          <entry key="HTML" value="527" />
+          <entry key="HTML" value="543" />
           <entry key="JAVA" value="201" />
           <entry key="JavaScript" value="77" />
+          <entry key="PLAIN_TEXT" value="32" />
         </counts>
       </usages-collector>
     </session>
@@ -160,8 +145,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/testeTemplate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+            <state relative-caret-position="345">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -1205,7 +1190,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533057882231" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533057917727" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -1323,12 +1308,20 @@
       <option name="presentableId" value="Default" />
       <updated>1533037813459</updated>
       <workItem from="1533037831781" duration="2818000" />
-      <workItem from="1533041805966" duration="10034000" />
+      <workItem from="1533041805966" duration="10293000" />
     </task>
+    <task id="LOCAL-00001" summary="Incrementando Bootstraps">
+      <created>1533057950490</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1533057950490</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12852000" />
+    <option name="totallyTimeSpent" value="13111000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1341,9 +1334,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="28" y="-1" width="1252" height="1024" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22636816" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22636816" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1354,7 +1346,7 @@
       <window_info anchor="bottom" id="Problems" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1366,7 +1358,7 @@
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32963374" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="14" visible="true" weight="0.3288889" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1385,6 +1377,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Incrementando Bootstraps" />
+    <option name="LAST_COMMIT_MESSAGE" value="Incrementando Bootstraps" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/package.json">
@@ -1510,8 +1506,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/testeTemplate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
