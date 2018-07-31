@@ -19,10 +19,6 @@ app.config([
                 controller:'newController',
                 templateUrl:'editTemplate.html'
             })
-            .when('/teste', {
-                controller:'simpleControllerOne',
-                templateUrl:'testeTemplate.html'
-            })
             .when('/edit:name', {
                 controller:'editController',
                 templateUrl:'editTemplate.html'
@@ -59,6 +55,13 @@ app.run([
  */
 app.controller('listController', function($scope){
     console.log('listaController');
+    $scope.user = {name:""}
+    $scope.listfruits = ['banana', 'maça', 'goiaba'];
+    $scope.counter = 0;
+
+    $scope.addOne = function(){
+        $scope.counter++;
+    };
 });
 
 

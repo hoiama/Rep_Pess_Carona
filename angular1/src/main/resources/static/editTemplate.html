@@ -1,8 +1,12 @@
 <h4>{{title}}</h4>
 
 <form name="myForm">
-    <input type="text" name="fruit" ng-model="fruit" required/>
-    <button class="btn btn-dark" ng-click="save()" ng-disabled="myForm.$invalid">Salvar</button>
-    <button href="#/" class="btn btn-dark">Cancelar</button>
+    <div class="input-group mb-3">
+        <input class="form-control" placeholder="ex: laranja" type="text" name="fruit" ng-model="fruit" required/>
+        <div class="input-group-append" id="button-addon4">
+            <button class="btn btn-outline-secondary" ng-click="save()" ng-disabled="myForm.$invalid">Salvar</button>
+            <button href="#/" class="btn btn-outline-secondary">Cancelar</button>
+        </div>
+    </div>
 </form>
 
