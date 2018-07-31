@@ -37,6 +37,7 @@ app.config([
             })
             .otherwise({redirectTo:'/'});
     }
+
 ]);
 
 
@@ -51,6 +52,13 @@ app.run([
         console.log('app.run');
     }
 ]);
+
+/**
+ * Controller padrão da página princinal
+ */
+app.controller('defaultController', function(){
+
+})
 
 
 /**
