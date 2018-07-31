@@ -1,4 +1,4 @@
-package br.com.hoiama.angular1;
+package br.com.hoiama.angular1.main;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

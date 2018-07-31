@@ -11,12 +11,30 @@ var app = angular.module('app', ['ngRoute', 'ngResource']);
 app.config([
     '$routeProvider', function($routeProvider){
         $routeProvider
-            .when('/', {controller:'listController', templateUrl:'listTemplate.html'})
-            .when('/new', {controller:'newController', templateUrl:'editTemplate.html'})
-            .when('/teste', {controller:'simpleControllerOne', templateUrl:'testeTemplate.html'})
-            .when('/edit:name', {controller:'editController', templateUrl:'editTemplate.html'})
-            .when('/http', {controller:'httpController', templateUrl:'httpTemplate.html'})
-            .when('/resource',{controller:'resourceController', templateUrl:'resourceTemplate'})
+            .when('/', {
+                controller:'listController',
+                templateUrl:'listTemplate.html'
+            })
+            .when('/new', {
+                controller:'newController',
+                templateUrl:'editTemplate.html'
+            })
+            .when('/teste', {
+                controller:'simpleControllerOne',
+                templateUrl:'testeTemplate.html'
+            })
+            .when('/edit:name', {
+                controller:'editController',
+                templateUrl:'editTemplate.html'
+            })
+            .when('/http', {
+                controller:'httpController',
+                templateUrl:'httpTemplate.html'
+            })
+            .when('/resource',{
+                controller:'resourceController',
+                templateUrl:'resourceTemplate'
+            })
             .otherwise({redirectTo:'/teste'});
     }
 ]);
@@ -79,7 +97,7 @@ app.controller('newController', function($scope, $location, $routeParams){
 
 
 app.controller('simpleControllerOne', function ($scope) {
-    $scope.user = {name:"Daniel"}
+    $scope.user = {name:""}
     $scope.frutas = ['banana', 'maça', 'goiaba'];
     $scope.counter = 0;
 

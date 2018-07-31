@@ -1,0 +1,30 @@
+<br/>
+
+<h4>Hello {{user.name}}</h4>
+<h4>{{counter}}</h4>
+
+<div class="input-group mb-3">
+    <input type="text" class="form-control" ng-model="user.name" placeholder="ex: Maria" aria-label="area lable" aria-describedby="descricao">
+    <div class="input-group-prepend">
+        <button class="btn btn-outline-secondary btn-dark" ng-click="addOne()" type="button" id="button-addon1">+ 1</button>
+    </div>
+</div>
+
+
+<h4> Sua lista de frutas: </h4>
+<ul><li ng-repeat="fruta in frutas">{{fruta}}</li></ul>
+
+
+<form name="myForm">
+    <div class="input-group mb-3">
+        <input  class="input-group-text" type="text"  ng-model="nomeModel" name="nomeName" value="namemValue" required/>
+        <button ng-hide="myForm.$invalid" class="btn btn-dark" ng-disabled="myForm.$invalid"> Save </button>
+    </div>
+</form>
+
+
+
+
+
+
+
