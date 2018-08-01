@@ -2,7 +2,7 @@
 /**
  * Declaração de módulo 'app' usando modulo ngRoute para criacao de rotas
  */
-var app = angular.module('app', ['ngRoute', 'ngResource']);
+var app = angular.module('app', ['ngRoute', 'ngResource',  'angular.filter']);
 
 
 /**
@@ -12,16 +12,16 @@ app.config([
     '$routeProvider', function($routeProvider){
         $routeProvider
             .when('/', {
-                controller:'defaultController',
-                templateUrl:'templates/defaultTemplate.html'
+                controller:'DefaultController',
+                templateUrl:'templates/default-template.html'
             })
             .when('/minhas/caronas', {
                 controller:'MinhasCaronasController',
-                templateUrl:'templates/editTemplate.html'
+                templateUrl:'templates/minhas-caronas-template.html'
             })
             .when('/buscar/caronas', {
                 controller:'BuscarController',
-                templateUrl:'templates/Buscar-Template.html'
+                templateUrl:'templates/buscar-caronas-template.html'
             })
             .otherwise({redirectTo:'/'});
     }
@@ -45,7 +45,7 @@ app.run([
 /**
  * Controller padrão da página princinal
  */
-app.controller('defaultController', function(){
+app.controller('DefaultController', function(){
 
 })
 
@@ -61,43 +61,25 @@ app.controller('defaultController', function(){
  * @param {} $location - Redireciona as rotas
  * @param {tipo} $routeParams - Obtem parametros repassados pela URI  
  */
-app.controller('MinhasCaronasController', ['$scope', '$location', '$routeParams', function($scope, $location, $routeParams){
-    console.log('editController');
-    $scope.title = "Nova fruta";
-    $scope.fruit = "";
-    $scope.save = function(){
-        $scope.fruits.push($scope.fruit);
-        $location.path('/');
+app.controller('MinhasCaronasController', ['$scope',
+                                            '$location',
+                                            '$routeParams', function($scope, $location, $routeParams){
+
+    $scope.listaRotas =  Array();
+    $scope.save = function(partida, chegada){
+        var rota = {
+            chegada: $scope.chegada,
+            partida: $scope.chegada
+        }
+
+        $scope.listaRotas.push(rota);
+
     }
-
-    $scope.title = "editar fruta";
-    $scope.fruit = $routeParams.name;
-    $scope.fruitIndex = $scope.listFruits.indexOf($scope.fruit);
-
-    $scope.save = function(){
-        $scope.fruits[$scope.fruitIndex] = $scope.fruit;
-        $location.path('/');
-    }
-
-    console.log('listaController');
-    $scope.user = {name:""}
-    $scope.listCaronas = ['Porto Alegre', 'Sao leopoldo', 'novo hamburgo'];
-    $scope.counter = 0;
-
-    $scope.addOne = function(){
-        $scope.counter++;
-    };
 }]);
 
 
-app.controller('simpleControllerOne', ['$scope', function ($scope) {
-    $scope.user = {name:""}
-    $scope.frutas = ['banana', 'maça', 'goiaba'];
-    $scope.counter = 0;
+app.factory('AnalisaListaRotasRepeditas', ['$window', function (win) {
 
-    $scope.addOne = function(){
-        $scope.counter++;
-    };
 }]);
 
 
@@ -109,9 +91,6 @@ app.controller('BuscarController', ['$scope', '$http',function($scope, $http){
             .then(
                 function(respose){
                     $scope.listCaronas = respose.data;
-                    console.log('respose.data', respose.data); 
-                    console.log('respose', respose);
-                    console.log('respose.data', respose.data.fruits);
                 },
                 function(erro){
                     alert('Erro..."');
@@ -121,3 +100,6 @@ app.controller('BuscarController', ['$scope', '$http',function($scope, $http){
     }
 }])
 
+/**
+ * Estudar testes de controller https://docs.angularjs.org/guide/controller
+ */

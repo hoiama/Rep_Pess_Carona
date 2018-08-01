@@ -1,0 +1,41 @@
+
+<br/>
+<div class="container-fluid">
+<h4>Caronas</h4>
+
+<form name="formularioRota">
+    <div class="row">
+        <div class="col-4">
+            <input name="partida" type="text" class="form-control" placeholder="Partida:" ng-model="partida" required>
+        </div>
+        <div class="col-4">
+            <input name="chegada" type="text" class="form-control" placeholder="Chegada:" ng-model="chegada" required>
+        </div>
+        <div>
+            <button class="btn btn-dark" ng-disabled="formularioRota.$invalid" ng-click="save(partida, chegada)">Salvar</button>
+        </div>
+    </div>
+</form>
+
+<br/>
+<br/>
+<br/>
+
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th colspan="3">({{listaRotas.length}}) Rotas definidas</th>
+            </tr>
+        </thead>
+
+        <tbody ng-repeat="rota in listaRotas | unique : 'partida'">
+            <tr>
+                <td>{{rota.partida}}</td>
+                <td>{{rota.chegada}}</td>
+                <td>
+                    <button class="btn btn-dark" href="#/new">Publicar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
