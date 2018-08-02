@@ -63,18 +63,27 @@ app.controller('DefaultController', function(){
  */
 app.controller('MinhasCaronasController', ['$scope',
                                             '$location',
-                                            '$routeParams', function($scope, $location, $routeParams){
+                                            '$routeParams',
+                                            '$http', function($scope, $location, $routeParams, $http){
 
     $scope.listaRotas =  Array();
+    $scope.car = false;
+
     $scope.save = function(partida, chegada){
         var rota = {
             chegada: $scope.chegada,
             partida: $scope.chegada
         }
 
+
         $scope.listaRotas.push(rota);
 
     }
+
+    $scope.postData = function(){
+        $http.post()
+            .then();
+    };
 }]);
 
 
