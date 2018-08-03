@@ -23,6 +23,10 @@ app.config([
                 controller:'BuscarController',
                 templateUrl:'templates/buscar-caronas-template.html'
             })
+            .when('/testesAngular', {
+                controller:'TestesAngularController',
+                templateUrl:'templates/testes-angular-controller.html'
+            })
             .otherwise({redirectTo:'/'});
     }
 
@@ -67,15 +71,12 @@ app.controller('MinhasCaronasController', ['$scope',
                                             '$http', function($scope, $location, $routeParams, $http){
 
     $scope.listaRotas =  Array();
-    $scope.car = false;
 
     $scope.save = function(partida, chegada){
         var rota = {
             chegada: $scope.chegada,
             partida: $scope.chegada
         }
-
-
         $scope.listaRotas.push(rota);
 
     }
@@ -109,6 +110,24 @@ app.controller('BuscarController', ['$scope', '$http',function($scope, $http){
     }
 }])
 
+
+app.controller("TestesAngularController", ['$scope', function($scope){
+    $scope.colors = ["White", "Black", "Blue", "Red", "Silver"];
+    $scope.colors2 = ["Branco", "Preto", "Azul", "Vermelho", "Cinza"];
+    $scope.mostraEsconde = ["ng-hide", "ng-if", "ng-show"];
+    $scope.status= ["Ativado", "Desativado"];
+    $scope.statusSelected ="";
+    $scope.statusSelectedngHide="";
+    $scope.statusSelectedngShow ="";
+    $scope.statusSelectedngIf ="";
+    $scope.ngModel = "";
+    $scope.mostraEscondeSelected = "";
+    $scope.colorSelected = "";
+
+}]);
+
 /**
- * Estudar testes de controller https://docs.angularjs.org/guide/controller
+ * Estudar:
+ * testes de controller https://docs.angularjs.org/guide/controller
+ * Layouts : https://material.angularjs.org/1.1.5/layout/introduction
  */

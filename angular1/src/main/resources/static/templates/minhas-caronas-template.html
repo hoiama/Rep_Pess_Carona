@@ -1,8 +1,10 @@
 
 <br/>
 <div class="container-fluid">
-<h4 ng-class="{text-danger: car.select}">Caronas</h4>
-<input type="checkbox" ng-model="car.selected"/>
+
+<h4>Caronas</h4>
+
+
 
 <form name="formularioRota">
     <div class="row">
@@ -18,13 +20,17 @@
     </div>
 </form>
 
-    //Verificar calendário http://www.bootstrap-year-calendar.com/#Examples/Full%20example
 
+<!--
+    Verificar calendário http://www.bootstrap-year-calendar.com/#Examples/Full%20example
+    https://www.primefaces.org/primeng/#/schedule
+    https://mattlewis92.github.io/angular-calendar/#/kitchen-sink
+    -->
 <br/>
 <br/>
 <br/>
 
-    <table class="table">
+    <table class="table" ng-show="listaRotas.length > 0">
         <thead class="thead-light">
             <tr>
                 <th colspan="3">({{listaRotas.length}}) Rotas definidas </th>

@@ -1,0 +1,117 @@
+
+<br/>
+<div class="container">
+    <table id="tabela-geral" class="table table-striped">
+        <thead>
+            <tr class="thead-dark">
+                <th scope="col">#</th>
+                <th scope="col">Diretiva</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Teste</th>
+                <th scope="col">Alvo</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <th scope="row">1</th>
+                <td>ng-class</td>
+                <td width="400">
+                    Aplica uma classe em um elemento portando ng-model
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="deleted"/>
+                </td>
+                <td>
+                    <h4 ng-class="{'text-danger' : deleted}">Caronas</h4>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">2</th>
+                <td>ng-style</td>
+                <td width="400">
+                    Estiliza um elemento portando ng-style.
+                </td>
+                <td>
+                    <label>Cores: </label>
+                    <select ng-model="colorSelected" ng-options="color for color in colors"> Selecione uma cor </select>
+                </td>
+                <td>
+                    <h4 ng-style="{color: colorSelected}"> ng-style</h4>
+                    <p >Cor selecionada {{colorSelected}} </p>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">2</th>
+                <td>ng-model</td>
+                <td width="400">
+                    Link uma variavel de modelo contida no controller(app.js) a um elemento na view (html), através do escopo '$scope".
+                </td>
+                <td>
+                    <label>Cores: </label>
+                    <input type="text" ng-model="ngModel"/>
+                </td>
+                <td>
+                    <label>Propriedade do scopo</label>
+                    <p>{{ngModel}} </p>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">2</th>
+                <td>ng-show </td>
+                <td width="400">
+                    Mostra o conteúdo, porém só já esta renderizado no HTML, apenas esconde quando desativado.
+                </td>
+                <td>
+                    <label>status: </label>
+                    <select ng-model="statusSelectedngShow" ng-options="estado for estado in status">
+                    </select>
+                </td>
+                <td>
+                    <div>
+                        <h4 ng-show="statusSelectedngShow =='Ativado'"> 'ng-if' Renderiza e mostra </h4>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">2</th>
+                <td>ng-if </td>
+                <td width="400">
+                    Mostra o conteúdo, porém só renderiza no HTML quando ativado.
+                </td>
+                <td>
+                    <label>status: </label>
+                    <select ng-model="statusSelectedngIf" ng-options="estado for estado in status">
+                    </select>
+                </td>
+                <td>
+                    <div>
+                        <h4 ng-if="statusSelectedngIf == 'Ativado'"> 'ng-if' Esconde </h4>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">2</th>
+                <td>ng-hide </td>
+                <td width="400">
+                    Esconde o conteúdo já renderizado.
+                </td>
+                <td>
+                    <label>status: </label>
+                    <select ng-model="statusSelectedngHide" ng-options="estado for estado in status">
+                    </select>
+                </td>
+                <td>
+                    <div>
+                        <h4 ng-hide="statusSelectedngHide == 'Ativado'"> 'ng-hide' Esconde </h4>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
