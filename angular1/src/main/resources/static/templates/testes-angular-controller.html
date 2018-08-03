@@ -3,7 +3,7 @@
 <div class="container">
     <table id="tabela-geral" class="table table-striped">
         <thead>
-            <tr class="thead-dark">
+            <tr class="thead-dark col-centered">
                 <th scope="col">#</th>
                 <th scope="col">Diretiva</th>
                 <th scope="col">Descrição</th>
@@ -67,7 +67,7 @@
                 </td>
                 <td>
                     <label>status: </label>
-                    <select ng-model="statusSelectedngShow" ng-options="estado for estado in status">
+                    <select ng-model="statusSelectedngShow" ng-options="estado for estado in status" ng-init="statusSelectedngShow = status[0]">
                     </select>
                 </td>
                 <td>
@@ -85,7 +85,7 @@
                 </td>
                 <td>
                     <label>status: </label>
-                    <select ng-model="statusSelectedngIf" ng-options="estado for estado in status">
+                    <select ng-model="statusSelectedngIf" ng-options="estado for estado in status" ng-init="statusSelectedngIf = status[0]">
                     </select>
                 </td>
                 <td>
@@ -110,6 +110,20 @@
                     <div>
                         <h4 ng-hide="statusSelectedngHide == 'Ativado'"> 'ng-hide' Esconde </h4>
                     </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">2</th>
+                <td>ng-hide </td>
+                <td width="400">
+                    Inclui um HTML externo dentro do elemento desejado.
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    <div ng-include="'templates/fragmentoHtml.html'"></div>
                 </td>
             </tr>
         </tbody>
