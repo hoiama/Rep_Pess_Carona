@@ -2,7 +2,7 @@
 /**
  * Declaração de módulo 'app' usando modulo ngRoute para criacao de rotas
  */
-var app = angular.module('app', ['ngRoute', 'ngResource',  'angular.filter']);
+var app = angular.module('app', ['ngRoute', 'ngResource', 'angular.filter']);
 
 
 /**
@@ -25,7 +25,11 @@ app.config([
             })
             .when('/testesAngular', {
                 controller:'TestesAngularController',
-                templateUrl:'templates/testes-angular-controller.html'
+                templateUrl:'templates/testes/testes-angular-controller.html',
+            })
+            .when('/templateUrlReplace', {
+                templateUrl:'templates/testes/fragmentoHtml.html',
+                replace:true
             })
             .otherwise({redirectTo:'/'});
     }
@@ -59,7 +63,6 @@ app.controller('DefaultController', function(){
  * @param {scopo} $scope - Escopo que pode ser usada no controller criado
  * @param {location} $location - Redireciona as rotas
  * @param {routeParams} $routeParams - Obtem parametros repassados pela URI
-
  * Adiciona um novo item a lista de frutas
  * @param {scopo} $scope - Escopo que pode ser usada no controller criado
  * @param {} $location - Redireciona as rotas
@@ -71,18 +74,17 @@ app.controller('MinhasCaronasController', ['$scope',
                                             '$http', function($scope, $location, $routeParams, $http){
 
     $scope.listaRotas =  Array();
-
     $scope.save = function(partida, chegada){
         var rota = {
             chegada: $scope.chegada,
             partida: $scope.chegada
         }
         $scope.listaRotas.push(rota);
-
     }
 
     $scope.postData = function(){
-        $http.post()
+        $http
+            .post()
             .then();
     };
 }]);
@@ -111,6 +113,11 @@ app.controller('BuscarController', ['$scope', '$http',function($scope, $http){
 }])
 
 
+
+/**
+ * TESTES ANGULAR1
+ */
+
 app.controller("TestesAngularController", ['$scope', function($scope){
     $scope.colors = ["White", "Black", "Blue", "Red", "Silver"];
     $scope.colors2 = ["Branco", "Preto", "Azul", "Vermelho", "Cinza"];
@@ -123,8 +130,50 @@ app.controller("TestesAngularController", ['$scope', function($scope){
     $scope.ngModel = "";
     $scope.mostraEscondeSelected = "";
     $scope.colorSelected = "";
+    $scope.data = "22/02/2018";
+    $scope.PROpriedade = "testes de propriedade";
+
+    $scope.carros =
+        [
+            {vidro: 2, portas: 5,mala: 8},
+            {vidro: 1, portas: 4,mala: 7},
+            {vidro: 3, portas: 6,mala: 9},
+        ]
+
 
 }]);
+
+
+app.directive("my-template", function(){
+    return {
+        template:
+            "<div class='alert'>" +
+                "<span class='alert-topic'>" +
+                    "Something went wrong!" +
+                "</span>" +
+                "<span class='alert-description'>" +
+                    "You must inform the plate and the color of the car!" +
+                "</span>" +
+            "</div>"
+    };
+});
+
+
+app.directive("my-templateUrl", function(){
+    return {
+        templateUrl: "templates/fragmentoHtml.html"
+    };
+});
+
+
+app.directive("my-templateUrlReplace", function(){
+    return {
+        restrict: 'E',
+        templateUrl: "templates/fragmentoHtml.html",
+        replace: true
+    };
+});
+
 
 /**
  * Estudar:

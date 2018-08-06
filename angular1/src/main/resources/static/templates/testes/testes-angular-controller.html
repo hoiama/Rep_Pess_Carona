@@ -44,7 +44,7 @@
             </tr>
 
             <tr>
-                <th scope="row">2</th>
+                <th scope="row">3</th>
                 <td>ng-model</td>
                 <td width="400">
                     Link uma variavel de modelo contida no controller(app.js) a um elemento na view (html), através do escopo '$scope".
@@ -60,7 +60,7 @@
             </tr>
 
             <tr>
-                <th scope="row">2</th>
+                <th scope="row">4</th>
                 <td>ng-show </td>
                 <td width="400">
                     Mostra o conteúdo, porém só já esta renderizado no HTML, apenas esconde quando desativado.
@@ -78,7 +78,7 @@
             </tr>
 
             <tr>
-                <th scope="row">2</th>
+                <th scope="row">5</th>
                 <td>ng-if </td>
                 <td width="400">
                     Mostra o conteúdo, porém só renderiza no HTML quando ativado.
@@ -96,7 +96,7 @@
             </tr>
 
             <tr>
-                <th scope="row">2</th>
+                <th scope="row">6</th>
                 <td>ng-hide </td>
                 <td width="400">
                     Esconde o conteúdo já renderizado.
@@ -114,7 +114,7 @@
             </tr>
 
             <tr>
-                <th scope="row">2</th>
+                <th scope="row">7</th>
                 <td>ng-hide </td>
                 <td width="400">
                     Inclui um HTML externo dentro do elemento desejado.
@@ -123,9 +123,115 @@
 
                 </td>
                 <td>
-                    <div ng-include="'templates/fragmentoHtml.html'"></div>
+                    <div ng-include="'templates/testes/fragmentoHtml.html'"></div>
                 </td>
             </tr>
+
+            <tr>
+                <th scope="row">8</th>
+                <td>my-template </td>
+                <td width="400">
+                    Inclui um template, um pedaço de HTML reutilizavel.
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    <!--<div my-template></div>-->
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">8</th>
+                <td>my-templateUrl </td>
+                <td width="400">
+                    Inclui um templateUrl, um pedaço de HTML reutilizavel a partir de uma Url.
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    <my-templateUrlReplace></my-templateUrlReplace>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">8</th>
+                <td>Filter </td>
+                <td width="400">
+                    <div> { 10 | currency : ' R$ '} </div>
+                    <div> { date | date: 'MMMM dd/MM/yyyy' } </div>
+                    <div> { data | json} </div>
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    <div> {{ 10 | currency:'R$'}} </div>
+                    <div> {{ data | date:'MMMM dd/MM/yyyy' }} </div>
+                    <div> {{ carro | json }} </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">8</th>
+                <td>limitTo </td>
+                <td width="400">
+                    Limita uma lista de elementos ou texto.
+                </td>
+                <td>
+                    {colors | size:3}
+                </td>
+                <td>
+                    {{colors | limitTo:3}}
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">8</th>
+                <td>lowercase </td>
+                <td width="400">
+                    Mostra em caixa baixa.
+                </td>
+                <td>
+                    {PROpriedade | lowercase }
+                </td>
+                <td>
+                    {{PROpriedade | lowercase }}
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">8</th>
+                <td>number </td>
+                <td width="400">
+                    Formatação de número.
+                </td>
+                <td>
+                    { 10 | number:3 }
+                </td>
+                <td>
+                    {{ 10 | number:3 }}
+                </td>
+            </tr>
+
+
+            <tr>
+                <th scope="row">8</th>
+                <td>number </td>
+                <td width="400">
+                    Formatação de número.
+                </td>
+                <td>
+                    <input type="text" ng-model="criteria" placeholder="What are you looking for?"/>
+                </td>
+                <td>
+                    <div ng-repeat="carro in carros | orderBy:portas:order | filter:criteria">
+                        <div>Vidro {{carro.vidro }} -  Portas {{carro.portas}} - Malas {{carro.mala}}</div>
+                    </div>
+                </td>
+            </tr>
+
         </tbody>
     </table>
 </div>

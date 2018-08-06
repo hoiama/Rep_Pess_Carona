@@ -5,3 +5,6 @@
 #tabela-geral tr th {
     vertical-align:middle;
 }
+
+.ng-hide-add {  -webkit-transition: all 5s linear;  -moz-transition: all 5s linear;  -ms-transition: all 5s linear;  -o-transition: all 5s linear;  transition: all 5s linear;  opacity: 1;}
+.ng-hide-add-active {  display: block !important;  opacity: 0;}
