@@ -96,7 +96,9 @@ app.factory('AnalisaListaRotasRepeditas', ['$window', function (win) {
 
 
 app.controller('BuscarController', ['$scope', '$http',function($scope, $http){
+
     $scope.listCaronas = Array();
+
     $scope.getData = function(){
         $http
             .get('/getCarona')
@@ -110,6 +112,29 @@ app.controller('BuscarController', ['$scope', '$http',function($scope, $http){
                 }
             )      
     }
+
+
+    $scope.getData2 = function(){
+        $http.get('/getCarona')
+            .success(function(retorno) {
+                console.log(retorno);
+                $scope.listCaronas = retorno;
+            })
+            .error(function(erro) {
+                console.log(erro);
+            });
+    }
+
+
+     $scope.fotos = [];
+
+        var promise = $http.get('/getCarona');
+        promise.then(function(retorno) {
+            $scope.listCaronas = retorno.data;;
+        })
+        .catch(function(erro) {
+            console.log(erro)
+        });
 }])
 
 
@@ -166,12 +191,16 @@ app.directive("my-templateUrl", function(){
 });
 
 
-app.directive("my-templateUrlReplace", function(){
-    return {
-        restrict: 'E',
-        templateUrl: "templates/fragmentoHtml.html",
-        replace: true
-    };
+app.directive("meuPainel", function(){
+    var ddo {};
+    restrict: 'AE';
+
+    ddo.scope = {
+        titulo: '@titulo'
+    }
+
+    ddo.template = '<h1>test {{titulo}} </h1>';
+    return ddo;
 });
 
 
