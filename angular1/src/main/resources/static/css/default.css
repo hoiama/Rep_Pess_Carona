@@ -2,6 +2,16 @@
     vertical-align:middle;
 }
 
+#tabela-geral th{
+    color: #23dffde0;
+    font-size: 13px;
+    text-align: center;
+}
+
+#tabela-geral{
+    font-size: 12px;
+}
+
 #tabela-geral tr th {
     vertical-align:middle;
 }

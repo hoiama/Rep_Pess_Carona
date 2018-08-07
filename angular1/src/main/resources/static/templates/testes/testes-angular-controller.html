@@ -1,7 +1,7 @@
 
 <br/>
 <div class="container">
-    <table id="tabela-geral" class="table table-striped">
+    <table id="tabela-geral" class="table table-striped table-dark table-responsive">
         <thead>
             <tr class="thead-dark col-centered">
                 <th scope="col">#</th>
@@ -142,7 +142,7 @@
             </tr>
 
             <tr>
-                <th scope="row">8</th>
+                <th scope="row">9</th>
                 <td>my-templateUrl </td>
                 <td width="400">
                     Inclui um templateUrl, um pedaço de HTML reutilizavel a partir de uma Url.
@@ -156,12 +156,13 @@
             </tr>
 
             <tr>
-                <th scope="row">8</th>
+                <th scope="row">10</th>
                 <td>Filter </td>
                 <td width="400">
                     <div> { 10 | currency : ' R$ '} </div>
                     <div> { date | date: 'MMMM dd/MM/yyyy' } </div>
                     <div> { data | json} </div>
+                    <div> scope.appTitle = $filter("uppercase")("Filtrando para Uppercase")</div>
                 </td>
                 <td>
 
@@ -169,12 +170,13 @@
                 <td>
                     <div> {{ 10 | currency:'R$'}} </div>
                     <div> {{ data | date:'MMMM dd/MM/yyyy' }} </div>
-                    <div> {{ carro | json }} </div>
+                    <div> {{ colors2 | json }} </div>
+                    <div> {{appTitle}} </div>
                 </td>
             </tr>
 
             <tr>
-                <th scope="row">8</th>
+                <th scope="row">11</th>
                 <td>limitTo </td>
                 <td width="400">
                     Limita uma lista de elementos ou texto.
@@ -188,7 +190,7 @@
             </tr>
 
             <tr>
-                <th scope="row">8</th>
+                <th scope="row">12</th>
                 <td>lowercase </td>
                 <td width="400">
                     Mostra em caixa baixa.
@@ -202,7 +204,7 @@
             </tr>
 
             <tr>
-                <th scope="row">8</th>
+                <th scope="row">13</th>
                 <td>number </td>
                 <td width="400">
                     Formatação de número.
@@ -217,13 +219,13 @@
 
 
             <tr>
-                <th scope="row">8</th>
+                <th scope="row">14</th>
                 <td>number </td>
                 <td width="400">
-                    Formatação de número.
+                    filtro (ng-repeat="carro in carros | orderBy:portas:order | filter:criteria)
                 </td>
                 <td>
-                    <input type="text" ng-model="criteria" placeholder="What are you looking for?"/>
+                    <input type="text" ng-model="criteria" placeholder="Filtro"/>
                 </td>
                 <td>
                     <div ng-repeat="carro in carros | orderBy:portas:order | filter:criteria">
@@ -233,21 +235,78 @@
             </tr>
 
             <tr>
-                <th scope="row">8</th>
-                <td> </td>
+                <th scope="row">15</th>
+                <td> Directive</td>
                 <td width="400">
-
+                    <div>Criamos uma diretiva chamada &lt;meu-painel&gt" referenciada como "meuPainel" no app.js, possuindo propriedades e templates proprios</div>
                 </td>
                 <td>
 
                 </td>
                 <td>
-                    <meu-painel titulo="teste">
-
-                    </meu-painel>
+                    <meu-painel propriedade1="{{PROpriedade}}"></meu-painel>
                 </td>
             </tr>
 
+            <tr>
+                <th scope="row">16</th>
+                <td> Directive</td>
+                <td width="400">
+                    <div>Criamos uma diretiva chamada &lt;minha-diretiva&gt" referenciada como "minhaDiretiva" no app.js, possuindo propriedades e templates proprios</div>
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    <minha-diretiva propriedade1="{{PROpriedade}}"></minha-diretiva>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">17</th>
+                <td> Filter </td>
+                <td width="400">
+                    <div>Filtro personalizado</div>
+                </td>
+                <td>
+                    <input type="text" ng-model="cpf" placeholder="CPF: " />
+                </td>
+                <td>
+                    <p> {{cpf | filtroPlacas}}</p>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">17</th>
+                <td> Formulario </td>
+                <td width="400">
+                    <div>formulario de dados</div>
+                </td>
+                <td>
+                    <div>
+                        <form name="formDadosPessoais">
+                            <input type="text"
+                                   placeholder="CPF: "
+                                   name="campoCpf"
+                                   maxlength="13"
+                                   ng-model="cpf2"
+                                   ng-required="true"
+                                   ng-minlength="12"
+                                   ng-maxlength="13"
+                                   ng-pattern="/[0-9]{3}./"
+                            />
+                            <button ng-click="set(cpf2)" ng-disabled="formDadosPessoais.$invalid">Enviar</button>
+                        </form>
+                    </div>
+                </td>
+                <td>
+                    <p> {{cpf2 | filtroPlacas}}</p>
+                    <alert ng-show="formDadosPessoais.campoCpf.$dirty && formDadosPessoais.campoCpf.$invalid"
+                           topic="Algo errado!">
+                        Valor incorreto!
+                    </alert>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>

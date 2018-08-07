@@ -143,7 +143,7 @@ app.controller('BuscarController', ['$scope', '$http',function($scope, $http){
  * TESTES ANGULAR1
  */
 
-app.controller("TestesAngularController", ['$scope', function($scope){
+app.controller("TestesAngularController", ['$scope', '$filter', function($scope, $filter){
     $scope.colors = ["White", "Black", "Blue", "Red", "Silver"];
     $scope.colors2 = ["Branco", "Preto", "Azul", "Vermelho", "Cinza"];
     $scope.mostraEsconde = ["ng-hide", "ng-if", "ng-show"];
@@ -156,7 +156,11 @@ app.controller("TestesAngularController", ['$scope', function($scope){
     $scope.mostraEscondeSelected = "";
     $scope.colorSelected = "";
     $scope.data = "22/02/2018";
-    $scope.PROpriedade = "testes de propriedade";
+    $scope.PROpriedade = "testes de PROpriedade";
+    $scope.appTitle = $filter("uppercase")("Filtrando para Uppercase");
+    $scope.placa = "";
+    $scope.cpf = "";
+    $scope.cpf2 ="";
 
     $scope.carros =
         [
@@ -164,8 +168,6 @@ app.controller("TestesAngularController", ['$scope', function($scope){
             {vidro: 1, portas: 4,mala: 7},
             {vidro: 3, portas: 6,mala: 9},
         ]
-
-
 }]);
 
 
@@ -184,23 +186,46 @@ app.directive("my-template", function(){
 });
 
 
-app.directive("my-templateUrl", function(){
-    return {
-        templateUrl: "templates/fragmentoHtml.html"
-    };
+/**
+ * Diretiva que retorna um ddo contendo template e propriedades do scope.
+ */
+app.directive("meuPainel", function(){
+    restrict: 'AE';
+    var ddo = {};
+
+    ddo.scope = {
+        propriedade1: '@propriedade1'
+    }
+
+    ddo.template = '<p>Sou um Template da diretiva meuPainel, minha propriedade eh: {{propriedade1}} </p>';
+    return ddo;
 });
 
 
-app.directive("meuPainel", function(){
-    var ddo {};
-    restrict: 'AE';
+/**
+ * Diretiva que retorna um ddo contendo template e propriedades do scope.
+ */
+app.directive("minhaDiretiva", function(){
+    restrict:"AE";
+    var ddo = {};
 
     ddo.scope = {
-        titulo: '@titulo'
+        propriedade1: '@propriedade1'
     }
 
-    ddo.template = '<h1>test {{titulo}} </h1>';
+    ddo.templateUrl = "templates/testes/fragmentoHtml.html"
     return ddo;
+});
+
+
+app.filter("filtroPlacas", function(){
+    return function (input) {
+        var parte1 = input.substring(0,3);
+        var parte2 = input.substring(3,6);
+        var parte3 = input.substring(6,9);
+        var parte4 = input.substring(9,12);
+        return parte1 + "." + parte2 + "." + parte3 + "-" + parte4;
+    };
 });
 
 
