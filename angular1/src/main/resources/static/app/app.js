@@ -160,7 +160,7 @@ app.controller("TestesAngularController", ['$scope', '$filter', function($scope,
     $scope.appTitle = $filter("uppercase")("Filtrando para Uppercase");
     $scope.placa = "";
     $scope.cpf = "";
-    $scope.cpf2 ="";
+    $scope.cpf2 = "";
 
     $scope.carros =
         [

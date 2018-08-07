@@ -1,6 +1,6 @@
 
 <br/>
-<div class="container">
+<div class="container-fluid ">
     <table id="tabela-geral" class="table table-striped table-dark table-responsive">
         <thead>
             <tr class="thead-dark col-centered">
@@ -20,7 +20,7 @@
                     Aplica uma classe em um elemento portando ng-model
                 </td>
                 <td>
-                    <input type="checkbox" ng-model="deleted"/>
+                    <input type="checkbox" ng-model="deleted" class="checkbox"/>
                 </td>
                 <td>
                     <h4 ng-class="{'text-danger' : deleted}">Caronas</h4>
@@ -35,7 +35,7 @@
                 </td>
                 <td>
                     <label>Cores: </label>
-                    <select ng-model="colorSelected" ng-options="color for color in colors"> Selecione uma cor </select>
+                    <select ng-model="colorSelected" ng-options="color for color in colors" class="custom-select custom-select-sm"> Selecione uma cor </select>
                 </td>
                 <td>
                     <h4 ng-style="{color: colorSelected}"> ng-style</h4>
@@ -51,7 +51,7 @@
                 </td>
                 <td>
                     <label>Cores: </label>
-                    <input type="text" ng-model="ngModel"/>
+                    <input type="text" ng-model="ngModel" class="form-control"/>
                 </td>
                 <td>
                     <label>Propriedade do scopo</label>
@@ -67,7 +67,7 @@
                 </td>
                 <td>
                     <label>status: </label>
-                    <select ng-model="statusSelectedngShow" ng-options="estado for estado in status" ng-init="statusSelectedngShow = status[0]">
+                    <select ng-model="statusSelectedngShow" ng-options="estado for estado in status" ng-init="statusSelectedngShow = status[0]" class="custom-select custom-select-sm">
                     </select>
                 </td>
                 <td>
@@ -85,7 +85,7 @@
                 </td>
                 <td>
                     <label>status: </label>
-                    <select ng-model="statusSelectedngIf" ng-options="estado for estado in status" ng-init="statusSelectedngIf = status[0]">
+                    <select ng-model="statusSelectedngIf" ng-options="estado for estado in status" ng-init="statusSelectedngIf = status[0]" class="custom-select custom-select-sm">
                     </select>
                 </td>
                 <td>
@@ -103,7 +103,7 @@
                 </td>
                 <td>
                     <label>status: </label>
-                    <select ng-model="statusSelectedngHide" ng-options="estado for estado in status">
+                    <select ng-model="statusSelectedngHide" ng-options="estado for estado in status" class="custom-select custom-select-sm">
                     </select>
                 </td>
                 <td>
@@ -127,36 +127,9 @@
                 </td>
             </tr>
 
+
             <tr>
                 <th scope="row">8</th>
-                <td>my-template </td>
-                <td width="400">
-                    Inclui um template, um pedaço de HTML reutilizavel.
-                </td>
-                <td>
-
-                </td>
-                <td>
-                    <!--<div my-template></div>-->
-                </td>
-            </tr>
-
-            <tr>
-                <th scope="row">9</th>
-                <td>my-templateUrl </td>
-                <td width="400">
-                    Inclui um templateUrl, um pedaço de HTML reutilizavel a partir de uma Url.
-                </td>
-                <td>
-
-                </td>
-                <td>
-                    <my-templateUrlReplace></my-templateUrlReplace>
-                </td>
-            </tr>
-
-            <tr>
-                <th scope="row">10</th>
                 <td>Filter </td>
                 <td width="400">
                     <div> { 10 | currency : ' R$ '} </div>
@@ -176,7 +149,7 @@
             </tr>
 
             <tr>
-                <th scope="row">11</th>
+                <th scope="row">9</th>
                 <td>limitTo </td>
                 <td width="400">
                     Limita uma lista de elementos ou texto.
@@ -190,7 +163,7 @@
             </tr>
 
             <tr>
-                <th scope="row">12</th>
+                <th scope="row">10</th>
                 <td>lowercase </td>
                 <td width="400">
                     Mostra em caixa baixa.
@@ -204,7 +177,7 @@
             </tr>
 
             <tr>
-                <th scope="row">13</th>
+                <th scope="row">11</th>
                 <td>number </td>
                 <td width="400">
                     Formatação de número.
@@ -219,13 +192,13 @@
 
 
             <tr>
-                <th scope="row">14</th>
+                <th scope="row">12</th>
                 <td>number </td>
                 <td width="400">
                     filtro (ng-repeat="carro in carros | orderBy:portas:order | filter:criteria)
                 </td>
                 <td>
-                    <input type="text" ng-model="criteria" placeholder="Filtro"/>
+                    <input type="text" ng-model="criteria" placeholder="Filtro" class="form-control"/>
                 </td>
                 <td>
                     <div ng-repeat="carro in carros | orderBy:portas:order | filter:criteria">
@@ -235,7 +208,7 @@
             </tr>
 
             <tr>
-                <th scope="row">15</th>
+                <th scope="row">13</th>
                 <td> Directive</td>
                 <td width="400">
                     <div>Criamos uma diretiva chamada &lt;meu-painel&gt" referenciada como "meuPainel" no app.js, possuindo propriedades e templates proprios</div>
@@ -249,7 +222,7 @@
             </tr>
 
             <tr>
-                <th scope="row">16</th>
+                <th scope="row">14</th>
                 <td> Directive</td>
                 <td width="400">
                     <div>Criamos uma diretiva chamada &lt;minha-diretiva&gt" referenciada como "minhaDiretiva" no app.js, possuindo propriedades e templates proprios</div>
@@ -263,13 +236,13 @@
             </tr>
 
             <tr>
-                <th scope="row">17</th>
+                <th scope="row">15</th>
                 <td> Filter </td>
                 <td width="400">
                     <div>Filtro personalizado</div>
                 </td>
                 <td>
-                    <input type="text" ng-model="cpf" placeholder="CPF: " />
+                    <input type="text" ng-model="cpf" placeholder="CPF: " class="form-control"/>
                 </td>
                 <td>
                     <p> {{cpf | filtroPlacas}}</p>
@@ -277,34 +250,43 @@
             </tr>
 
             <tr>
-                <th scope="row">17</th>
-                <td> Formulario </td>
+                <th scope="row">16</th>
+                <td> Form </td>
                 <td width="400">
-                    <div>formulario de dados</div>
+                    formulario de dados
                 </td>
                 <td>
-                    <div>
-                        <form name="formDadosPessoais">
-                            <input type="text"
-                                   placeholder="CPF: "
-                                   name="campoCpf"
-                                   maxlength="13"
-                                   ng-model="cpf2"
-                                   ng-required="true"
-                                   ng-minlength="12"
-                                   ng-maxlength="13"
-                                   ng-pattern="/[0-9]{3}./"
-                            />
-                            <button ng-click="set(cpf2)" ng-disabled="formDadosPessoais.$invalid">Enviar</button>
-                        </form>
-                    </div>
+                    <form name="formDadosPessoais">
+                        <input type="text" placeholder="CPF: " name="campoCpf" maxlength="13"
+                               ng-model="cpf2"  ng-required="true" ng-minlength="12"
+                               ng-maxlength="13" ng-pattern="/\d/" class="form-control">
+
+                        <button ng-click="set(cpf2)" ng-disabled="formDadosPessoais.$invalid" class="btn btn-info">
+                            Enviar
+                        </button>
+                    </form>
                 </td>
                 <td>
                     <p> {{cpf2 | filtroPlacas}}</p>
-                    <alert ng-show="formDadosPessoais.campoCpf.$dirty && formDadosPessoais.campoCpf.$invalid"
-                           topic="Algo errado!">
-                        Valor incorreto!
+                    <alert ng-show="formDadosPessoais.campoCpf.$dirty && formDadosPessoais.campoCpf.$invalid" topic="Algo errado!">
+                        <div> Atencao!!! </div>
                     </alert>
+
+                    <span ng-show="formDadosPessoais.campoCpf.$error.required">
+                        <div> Campo obrigatorio!</div>
+                    </span>
+
+                    <span ng-show="formDadosPessoais.campoCpf.$error.minlength">
+                        <div> Faltam caracteres! </div>
+                    </span>
+
+                    <span ng-show="formDadosPessoais.campoCpf.$error.maxlength">
+                        <div> Maximo excedido! </div>
+                    </span>
+
+                    <span ng-show="formDadosPessoais.campoCpf.$error.pattern">
+                        <div> Caracteres não permitidos!</div>
+                    </span>
                 </td>
             </tr>
         </tbody>

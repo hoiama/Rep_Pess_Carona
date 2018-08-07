@@ -1,9 +1,18 @@
+body{
+    background-color: #1daec5;
+}
+
 #tabela-geral tr td {
     vertical-align:middle;
+    height:100px;
+}
+
+#tabela-geral{
+    width:100%;
 }
 
 #tabela-geral th{
-    color: #23dffde0;
+    color: #1daec5;
     font-size: 13px;
     text-align: center;
 }
