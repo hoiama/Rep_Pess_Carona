@@ -7,10 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 
+
 @RestController
+@RequestMapping("/carona")
 public class ControllerRest {
 
-    @RequestMapping(value="/getCarona", method= RequestMethod.GET)
+    @RequestMapping(value="", method= RequestMethod.GET)
     public ArrayList<Carona> getListCaronas(){
         Carona carona1 = new Carona();
         carona1.setDestinoCondutor("são leopoldo");
@@ -40,4 +42,21 @@ public class ControllerRest {
         listCaronas.add(carona5);
         return listCaronas;
     }
+
+
+    @RequestMapping(value="", method = RequestMethod.POST)
+    public void postCarona (){
+
+    }
+
+    @RequestMapping(value="", method = RequestMethod.PUT)
+    public void putCarona (){
+
+    }
+
+    @RequestMapping(value="", method = RequestMethod.DELETE)
+    public void deleteCarona (){
+
+    }
+
 }

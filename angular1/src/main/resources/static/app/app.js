@@ -104,6 +104,7 @@ app.controller('BuscarController', ['$scope', '$http',function($scope, $http){
             .get('/getCarona')
             .then(
                 function(respose){
+                    console.log(respose);
                     $scope.listCaronas = respose.data;
                 },
                 function(erro){
@@ -113,28 +114,18 @@ app.controller('BuscarController', ['$scope', '$http',function($scope, $http){
             )      
     }
 
-
-    $scope.getData2 = function(){
-        $http.get('/getCarona')
-            .success(function(retorno) {
+    $scope.getData3 = function(){
+        $http
+            .get('/getCarona')
+            .then(function(retorno) {
                 console.log(retorno);
-                $scope.listCaronas = retorno;
-            })
-            .error(function(erro) {
-                console.log(erro);
+                $scope.listCaronas = retorno.data;
+            }).catch(function(erro) {
+                console.log(erro)
             });
     }
 
 
-     $scope.fotos = [];
-
-        var promise = $http.get('/getCarona');
-        promise.then(function(retorno) {
-            $scope.listCaronas = retorno.data;;
-        })
-        .catch(function(erro) {
-            console.log(erro)
-        });
 }])
 
 
@@ -143,7 +134,7 @@ app.controller('BuscarController', ['$scope', '$http',function($scope, $http){
  * TESTES ANGULAR1
  */
 
-app.controller("TestesAngularController", ['$scope', '$filter', function($scope, $filter){
+app.controller("TestesAngularController", ['$scope', '$filter', '$http', 'fabricaHttpPromise', function($scope, $filter, $http, fabricaHttpPromise){
     $scope.colors = ["White", "Black", "Blue", "Red", "Silver"];
     $scope.colors2 = ["Branco", "Preto", "Azul", "Vermelho", "Cinza"];
     $scope.mostraEsconde = ["ng-hide", "ng-if", "ng-show"];
@@ -161,6 +152,7 @@ app.controller("TestesAngularController", ['$scope', '$filter', function($scope,
     $scope.placa = "";
     $scope.cpf = "";
     $scope.cpf2 = "";
+    $scope.listCaronas = Array();
 
     $scope.carros =
         [
@@ -168,6 +160,21 @@ app.controller("TestesAngularController", ['$scope', '$filter', function($scope,
             {vidro: 1, portas: 4,mala: 7},
             {vidro: 3, portas: 6,mala: 9},
         ]
+
+
+    $scope.getListCaronas = function(){
+        fabricaHttpPromise.getCaronas
+            .then(function(data, status) {
+                console.log("retorno: ", data);
+                console.log("estado: " , status);
+                $scope.listCaronas = data.data;
+            })
+            .catch(function(erro) {
+                console.log(erro)
+            });
+    }
+
+
 }]);
 
 
@@ -227,6 +234,32 @@ app.filter("filtroPlacas", function(){
         return parte1 + "." + parte2 + "." + parte3 + "-" + parte4;
     };
 });
+
+
+app.factory("fabricaHttpPromise", function ($http) {
+    var _getCaronas = function () {
+        return $http.get("/carona");
+    }
+
+    var _postCarona = function (carona) {
+        return $http.post("/carona", carona);
+    }
+
+    var _putCarona = function (carona) {
+        return $http.put("/carona", carona);
+    }
+
+    var _deleteCarona = function(carona){
+        return $http.delete("/carona");
+    }
+
+    return {
+        getCaronas : _getCaronas(),
+        postCarona : _postCarona(),
+        putCarona : _putCarona(),
+        deleteCarona : _deleteCarona()
+    }
+})
 
 
 /**
